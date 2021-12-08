@@ -4,6 +4,7 @@ const sequelize = require('./db/sequelize-instace');
 require('express-async-errors');
 
 const pingRouter = require('./routes/ping');
+const artistsRouter = require('./routes/artists');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.json());
 
 // set routes
 app.use('/ping', pingRouter);
+app.use('/api/artists', artistsRouter);
 
 // set catch unknown endpoints
 app.use((req, res) => {
