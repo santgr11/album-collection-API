@@ -1,7 +1,9 @@
 const validateArtistBody = require('./validateArtistBody');
-const validateArtistParams = require('./validateArtistParams');
+const validateIdParams = require('./validateIdParams');
+const validateAlbumBody = require('./validateAlbumBody');
 
 module.exports = {
   validateArtistBody,
-  validateArtistParams
+  validateAlbumBody,
+  validateIdParams
 };

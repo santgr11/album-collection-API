@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 const router = require('express').Router();
 const { artistsController } = require('../controller');
-const { validateArtistBody, validateArtistParams } = require('../middlewares');
+const { validateArtistBody, validateIdParams } = require('../middlewares');
 
 router.get(
   '/:id',
-  validateArtistParams,
+  validateIdParams,
   artistsController.getArtist
 );
 
@@ -19,7 +18,7 @@ router.post(
 
 router.put(
   '/:id',
-  validateArtistParams,
+  validateIdParams,
   validateArtistBody,
   artistsController.updateArtist
 );

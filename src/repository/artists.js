@@ -13,7 +13,7 @@ const addArtist = async (name) => {
   }
 };
 
-const getArtist = async (id) => {
+const getArtistById = async (id) => {
   try {
     const result = await models.Artist.findByPk(id);
 
@@ -34,6 +34,15 @@ const getArtists = async () => {
   }
 };
 
+const getArtistByName = async (name) => {
+  try {
+    const result = await models.Artist.findOne({ name });
+    return result;
+  } catch (err) {
+    console.log(`Error getting artist with name ${name}: ${err.message}`);
+  }
+};
+
 const updateArtist = async (artistToUpdate, updatedArtist) => {
   artistToUpdate.name = updatedArtist.name;
   try {
@@ -46,7 +55,8 @@ const updateArtist = async (artistToUpdate, updatedArtist) => {
 
 module.exports = {
   addArtist,
-  getArtist,
+  getArtistById,
+  getArtistByName,
   getArtists,
   updateArtist
 };

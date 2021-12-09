@@ -10,7 +10,7 @@ const addArtist = async (req, res) => {
 const getArtist = async (req, res) => {
   const { id } = req.params;
 
-  const result = await artistsRepository.getArtist(id);
+  const result = await artistsRepository.getArtistById(id);
 
   if (!result) {
     return res.status(404).send({ error: `Artist with id ${id} not found` });
@@ -29,7 +29,7 @@ const updateArtist = async (req, res) => {
   const { id } = req.params;
   const updatedArtist = req.body;
 
-  const artistToUpdate = await artistsRepository.getArtist(id);
+  const artistToUpdate = await artistsRepository.getArtistById(id);
 
   if (!artistToUpdate) {
     return res.status(404).send({ error: `Artist with id ${id} not found` });
