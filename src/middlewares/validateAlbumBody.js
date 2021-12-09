@@ -4,8 +4,8 @@ const moment = require('moment');
 module.exports = async (req, res, next) => {
   const { body } = req;
 
-  if (body.release_date) {
-    body.release_date = moment(body.release_date, 'YYYY-MM-DD').toDate();
+  if (body.releaseDate) {
+    body.releaseDate = moment(body.releaseDate, 'DD-MM-YYYY').toDate();
   }
 
   const schema = Joi.object({
@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
     artists: Joi.array().items(Joi.object({
       name: Joi.string()
     })).required(),
-    release_date: Joi.date(),
+    releaseDate: Joi.date(),
     tracks: Joi.array().items(Joi.object({
       title: Joi.string()
     })).required(),

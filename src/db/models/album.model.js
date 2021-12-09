@@ -9,8 +9,7 @@ const Album = sequelize.define(
       allowNull: false
     },
     releaseDate: {
-      type: DataTypes.DATEONLY,
-      field: 'release_date'
+      type: DataTypes.DATEONLY
     },
     type: {
       type: DataTypes.STRING

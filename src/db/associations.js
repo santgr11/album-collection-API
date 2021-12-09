@@ -10,8 +10,8 @@ Track.belongsTo(Album, {
   as: 'album'
 });
 
-Artist.belongsToMany(Track, { through: 'artist_tracks', as: 'artist' });
-Track.belongsToMany(Artist, { through: 'artist_tracks', as: 'track' });
+Artist.belongsToMany(Track, { through: 'artist_tracks', as: 'track' });
+Track.belongsToMany(Artist, { through: 'artist_tracks', as: 'artist' });
 
 Album.belongsToMany(Artist, { through: 'album_artists', as: 'artist' });
 Artist.belongsToMany(Album, { through: 'album_artists', as: 'album' });

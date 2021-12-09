@@ -15,7 +15,7 @@ const getAlbums = async () => {
     const result = await models.Album.findAll();
     return result;
   } catch (err) {
-    console.log('Error getting the albums');
+    console.log(`Error getting the albums: ${err.message}`);
     throw err;
   }
 };
@@ -42,6 +42,16 @@ const getAlbumById = async (id) => {
   }
 };
 
+const getAlbumByTitle = async (title) => {
+  try {
+    const result = await models.Album.findOne({ title });
+    return result;
+  } catch (err) {
+    console.log(`Error getting album with title ${title}: ${err.message}`);
+    throw err;
+  }
+};
+
 const removeAlbum = async (id) => {
   try {
     await models.Album.destroy({
@@ -58,6 +68,7 @@ const removeAlbum = async (id) => {
 module.exports = {
   addAlbum,
   getAlbumById,
+  getAlbumByTitle,
   getAlbums,
   removeAlbum
 };

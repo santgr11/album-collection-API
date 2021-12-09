@@ -24,7 +24,7 @@ sequelize.authenticate()
     process.exit(1);
   });
 
-sequelize.sync({ force: true });
+sequelize.sync({ force: false });
 
 // set middlewares
 app.use(cors());

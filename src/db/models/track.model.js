@@ -12,12 +12,10 @@ const Track = sequelize.define(
       type: DataTypes.INTEGER
     },
     discNumber: {
-      type: DataTypes.INTEGER,
-      field: 'disc_number'
+      type: DataTypes.INTEGER
     },
     trackNumber: {
-      type: DataTypes.INTEGER,
-      field: 'disc_number'
+      type: DataTypes.INTEGER
     }
   }
 );
