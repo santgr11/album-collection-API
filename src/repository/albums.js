@@ -51,6 +51,7 @@ const removeAlbum = async (id) => {
     });
   } catch (err) {
     console.log(`Error removing album with id ${id}`);
+    throw err;
   }
 };
 

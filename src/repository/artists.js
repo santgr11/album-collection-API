@@ -53,10 +53,24 @@ const updateArtist = async (artistToUpdate, updatedArtist) => {
   }
 };
 
+const removeArtist = async (id) => {
+  try {
+    await models.Artist.destroy({
+      where: {
+        id
+      }
+    });
+  } catch (err) {
+    console.log(`Error removing artist with id ${id}`);
+    throw err;
+  }
+};
+
 module.exports = {
   addArtist,
   getArtistById,
   getArtistByName,
   getArtists,
-  updateArtist
+  updateArtist,
+  removeArtist
 };

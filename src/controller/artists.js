@@ -40,9 +40,18 @@ const updateArtist = async (req, res) => {
   return res.status(200).send(result);
 };
 
+const removeArtist = async (req, res) => {
+  const { id } = req.params;
+
+  await artistsRepository.removeArtist(id);
+
+  return res.status(200).send({ message: `Artist with id ${id} removed` });
+};
+
 module.exports = {
   addArtist,
   getArtist,
   getArtists,
-  updateArtist
+  updateArtist,
+  removeArtist
 };

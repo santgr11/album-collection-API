@@ -23,4 +23,10 @@ router.put(
   artistsController.updateArtist
 );
 
+router.delete(
+  '/:id',
+  validateIdParams,
+  artistsController.removeArtist
+);
+
 module.exports = router;
