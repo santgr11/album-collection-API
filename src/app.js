@@ -1,6 +1,7 @@
 const cors = require('cors');
 const express = require('express');
 const sequelize = require('./db/sequelize-instace');
+const { DB_CONFIG } = require('./utils/config');
 require('./db/associations');
 require('express-async-errors');
 
@@ -24,7 +25,9 @@ sequelize.authenticate()
     process.exit(1);
   });
 
-sequelize.sync({ force: false });
+if (DB_CONFIG.SYNC) {
+  sequelize.sync({ force: true });
+}
 
 // set middlewares
 app.use(cors());
