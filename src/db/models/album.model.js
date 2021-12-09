@@ -1,7 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../sequelize-instace');
-const Artist = require('./artist.model');
-const Track = require('./track.model');
 
 const Album = sequelize.define(
   'Album',
@@ -11,16 +9,13 @@ const Album = sequelize.define(
       allowNull: false
     },
     releaseDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       field: 'release_date'
     },
-  },
-  {
-    timestamps: false
+    type: {
+      type: DataTypes.STRING
+    }
   }
 );
-
-Album.belongsToMany(Artist, { through: 'album_artists' });
-Album.hasMany(Track);
 
 module.exports = Album;

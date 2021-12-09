@@ -1,10 +1,15 @@
 const cors = require('cors');
 const express = require('express');
 const sequelize = require('./db/sequelize-instace');
+require('./db/associations');
 require('express-async-errors');
 
-const pingRouter = require('./routes/ping');
-const artistsRouter = require('./routes/artists');
+const {
+  albumsRouter,
+  artistsRouter,
+  tracksRouter,
+  pingRouter
+} = require('./routes');
 
 const app = express();
 
@@ -19,13 +24,17 @@ sequelize.authenticate()
     process.exit(1);
   });
 
+sequelize.sync({ force: true });
+
 // set middlewares
 app.use(cors());
 app.use(express.json());
 
 // set routes
 app.use('/ping', pingRouter);
+app.use('/api/albums', albumsRouter);
 app.use('/api/artists', artistsRouter);
+app.use('/api/tracks', tracksRouter);
 
 // set catch unknown endpoints
 app.use((req, res) => {

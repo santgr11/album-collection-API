@@ -11,6 +11,7 @@ const sequelize = new Sequelize(
     port: DB_CONFIG.PORT,
     define: {
       underscored: true,
+      timestamps: false
     }
   }
 );
