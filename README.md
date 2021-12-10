@@ -44,5 +44,10 @@ Podemos dejar que nuestro ORM se encargue de la creacion de las tablas estableci
 
 ### Probando la API.
 
-Para facilitar los distintos endpoints tenemos una coleccion de postman con los distintos request posibles en la carpeta [resources](./resources/albums_collection.postman_collection.json)
+Para ejecutar el programa solo hay que correr el comando `npm start` en una consola abierta en la base del proyecto, tambien es posible ejecutar `npm run dev` si queres prbar cambias, en este modo siempre que guardes un cambio el programa se reiniciará.
 
+Para verificar que se este ejecutando correctamente podemos hacer un GET request al endpoint `/ping`, deberiamos recibir un texto con la palabra `pong`.
+
+Para facilitar los distintos endpoints tenemos una coleccion de postman con los distintos request posibles en la carpeta [resources](./resources/albums_collection.postman_collection.json).
+
+Para mayor informacion de los siguientes endpoints, por favor visitar la documentacion publicada en el siguiente enlace https://documenter.getpostman.com/view/7772577/UVR4MV35
