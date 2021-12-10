@@ -25,7 +25,7 @@ sequelize.authenticate()
     process.exit(1);
   });
 
-if (DB_CONFIG.SYNC) {
+if (DB_CONFIG.SYNC === 'true') {
   sequelize.sync({ force: true });
 }
 

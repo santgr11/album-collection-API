@@ -43,6 +43,12 @@ const updateArtist = async (req, res) => {
 const removeArtist = async (req, res) => {
   const { id } = req.params;
 
+  const artistToRemove = await artistsRepository.getArtistById(id);
+
+  if (!artistToRemove) {
+    return res.status(404).send({ error: `Artist with ${id} not found` });
+  }
+
   await artistsRepository.removeArtist(id);
 
   return res.status(200).send({ message: `Artist with id ${id} removed` });
