@@ -8,9 +8,9 @@ El proyecto consiste en tres entidades basicas, **albums**, **artistss** y **tra
 
 La API permite administrar estas entidades relacionadas para agregarlas, modificarlas, consultar y eliminarlas.
 
-## Tecnologias
+### Tecnologias
 
-Está escrita en NodeJS, utilizando una base de datos MySQL.
+La aplicacion esta escrita en NodeJS, utilizando una base de datos MySQL.
 
 Las librerias utilizadas de mayor importancia son:
 
@@ -40,9 +40,9 @@ Ahora vamos a crear nuestra base de datos vacía corriendo `CREATE DATABASE disc
 
 Deberiamos ver el resultado `Query OK`. Vamos a guardar el valor que definimos como nombre de la base de datos en el `.env` en la variable `DB_NAME`, en el ejemplo `DB_NAME=disc_collection_db`.
 
-Podemos dejar que nuestro ORM se encargue de la creacion de las tablas estableciend la variable `DB_SYNC` en nuestro `.env` a true (`DB_SYNC=true`) y correr el programa ejecutando una consola abierta en la base del proyecto y corriendo el comando `npm start`.
+Podemos dejar que nuestro ORM se encargue de la creacion de las tablas estableciendo la variable `DB_SYNC` en nuestro `.env` a true (`DB_SYNC=true`) y correr el programa ejecutando una consola abierta en la base del proyecto y corriendo el comando `npm start`. Recorda cambiar la variable `DB_SYNC` luego de crear las tablas, en caso contrario las recreara la proxima vez que ejecutes el programa.
 
-### Probando la API.
+### Ejecutar API y utilizar endpoints.
 
 Para ejecutar el programa solo hay que correr el comando `npm start` en una consola abierta en la base del proyecto, tambien es posible ejecutar `npm run dev` si queres prbar cambias, en este modo siempre que guardes un cambio el programa se reiniciará.
 
